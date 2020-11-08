@@ -66,7 +66,7 @@ namespace TechJobsOO
                 }
                 else
                 {
-                    theString += "_____";
+                    theString += "_____ - Data not available";
                 }
                 count++;
             }

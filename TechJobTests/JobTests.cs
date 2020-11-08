@@ -49,7 +49,9 @@ namespace TechJobTests
         //string test_toString = test_job3.ToString();
         public void TestToString()
         {
-             
+            string print = test_job3.ToString();
+            Assert.IsTrue(print.Contains("")); //#1
+            
         }
     }
 }
