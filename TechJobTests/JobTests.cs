@@ -45,13 +45,20 @@ namespace TechJobTests
             Assert.AreNotEqual(test_job3, test_job4);
         }
 
+        string test_toString = test_job3.ToString();
         [TestMethod]
-        //string test_toString = test_job3.ToString();
+        
         public void TestToString()
         {
-            string print = test_job3.ToString();
-            Assert.IsTrue(print.Contains("")); //#1
             
+            Assert.IsTrue(test_toString.Contains("")); //#1
+
+
+            //#3
+            if (test_toString.Contains("_____"))
+            {
+                Assert.IsTrue(test_toString.Contains("Data not available"));
+            }
         }
     }
 }
