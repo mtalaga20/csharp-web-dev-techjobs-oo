@@ -45,13 +45,13 @@ namespace TechJobsOO
 
         public override string ToString()
         {
-            string theString = "";
+            string theString = "\n";
 
-            theString += "ID:" + Id.ToString();
-            theString += "Name:" + Name;
+            theString += "ID: " + Id.ToString() + "\n";
+            theString += "Name: " + Name + "\n";
 
             //leftover categories
-            List<string> categories = new List<String>() { "Employer:", "Location", "Position Type", "Core Competency" };
+            List<string> categories = new List<String>() { "Employer", "Location", "Position Type", "Core Competency" };
             List<object> objects = new List<object>() {EmployerName, EmployerLocation, JobType, JobCoreCompetency };
             
             int length = categories.Count;
@@ -59,10 +59,10 @@ namespace TechJobsOO
 
             while(count < length )
             {
-                theString += categories[count] + ":";
+                theString += categories[count] + ": ";
                 if (objects[count].ToString() != null)
                 {
-                    theString += objects[count].ToString();
+                    theString += objects[count].ToString() + "\n";
                 }
                 else
                 {
