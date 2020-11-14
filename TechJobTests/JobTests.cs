@@ -1,6 +1,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TechJobsOO;
 
+using System.Collections.Generic;
+
 namespace TechJobTests
 {
     [TestClass]
@@ -11,7 +13,9 @@ namespace TechJobTests
         
         Job test_job3 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         Job test_job4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-        //string test_toString = test_job3.ToString();
+
+        List<string> test_List = new List<string>() { "ID", "Name", "Employer", "Location", "Position Type", "Core Competency" };
+
         [TestMethod]
         public void TestSettingJobId()
         {
@@ -52,13 +56,33 @@ namespace TechJobTests
         public void TestToString()
         {
             
-            //Assert.IsTrue(test_toString.Contains("")); //#1
+            Assert.Equals(test_job3.ToString()[0], test_job3.ToString()[test_job3.ToString().Length - 1]); //#1
 
+            //#2
+            bool missing = false; //amount of categories
+            foreach(string name in test_List)
+            {
+                if(!test_job3.ToString().Contains(name)){
+                    missing = true;
+                }//checking if a tag is missing
+            }
+            Assert.Equals(false, missing);
+
+            int n_count = 0;
+            foreach(char letter in test_job3.ToString())
+            {
+                if(letter == '\n')
+                {
+                    n_count++;
+                }
+            }
+            Assert.Equals(6, n_count); //expecting 6 spaces to make each have own line
+            
 
             //#3
-            //if (test_toString.Contains("_____"))
+            if (test_job3.ToString().Contains("_____"))
             {
-                //Assert.IsTrue(test_toString.Contains("Data not available"));
+                Assert.IsTrue(test_job3.ToString().Contains("Data not available"));
             }
         }
     }

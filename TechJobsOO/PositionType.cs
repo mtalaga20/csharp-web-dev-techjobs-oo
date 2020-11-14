@@ -19,17 +19,7 @@ namespace TechJobsOO
             return obj is PositionType positionType &&
                    Id == positionType.Id;
         }
-        /*
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(Id);
-        }
-
-        public override string ToString()
-        {
-            return Value;
-        }
-        */
+   
         
     }
 }

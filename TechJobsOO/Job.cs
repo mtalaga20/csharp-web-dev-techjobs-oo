@@ -60,7 +60,7 @@ namespace TechJobsOO
             while(count < length )
             {
                 theString += categories[count] + ": ";
-                if (objects[count].ToString() != null)
+                if (objects[count].ToString() != "")
                 {
                     theString += objects[count].ToString() + "\n";
                 }
@@ -70,11 +70,7 @@ namespace TechJobsOO
                 }
                 count++;
             }  
-
-            
-
-            theString += ""; 
-            
+ 
             return theString;
         }
     }

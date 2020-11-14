@@ -21,17 +21,7 @@ namespace TechJobsOO
                    Id == competency.Id;
         }
 
-        /*
-        public override int GetHashCode()
-        {
-            return HashCode.Combine(Id);
-        }
-
-        public override string ToString()
-        {
-            return value;
-        }
-        */
+      
     }
     
 }
